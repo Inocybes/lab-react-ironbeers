@@ -17,7 +17,9 @@ function NewBeer() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const newBeer = {
+    
+    try {
+      const newBeer = {
       name,
       tagline,
       description,
@@ -27,8 +29,13 @@ function NewBeer() {
       contributed_by
     }
     await axios.post("https://ih-beers-api2.herokuapp.com/beers/new", newBeer);
-
     navigate("/beers");
+    } catch (error) {
+      navigate("error")
+    }
+    
+
+    
   };
 
   return (

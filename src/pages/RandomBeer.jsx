@@ -2,21 +2,28 @@ import React from "react";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function RandomBeer() {
   const [beersRandom, setBeerRandom] = useState(null);
   const [fetching, setFetching] = useState(true);
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     getBeerRandom();
   }, []);
 
   const getBeerRandom = async () => {
-    const response = await axios.get(
-      "https://ih-beers-api2.herokuapp.com/beers/random"
-    );
-    setBeerRandom(response.data);
-    setFetching(false);
+    try {
+      const response = await axios.get("https://ih-beers-api2.herokuapp.com/beers/random"
+      );
+      setBeerRandom(response.data);
+      setFetching(false);
+      
+    } catch (error) {
+      navigate("error")
+    }
   };
 
   if (fetching) {
