@@ -1,9 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
 import axios from "axios";
-
 
 function RandomBeer() {
   const [beersRandom, setBeerRandom] = useState(null);
@@ -22,11 +20,7 @@ function RandomBeer() {
   };
 
   if (fetching) {
-    return (
-      <div>
-        <ClipLoader color="#2F6DA8" size="50px" />
-      </div>
-    );
+    return <div>...Loading</div>;
   }
 
   return (
