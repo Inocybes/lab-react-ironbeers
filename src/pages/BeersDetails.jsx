@@ -24,7 +24,7 @@ function DetailsBeer() {
 
   if (fetching) {
     return (
-      <div>Loading!!!</div>
+      <div>...Loading</div>
     );
   }
 
