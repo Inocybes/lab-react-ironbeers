@@ -14,7 +14,9 @@ function BeersList() {
 
   const getBeers = async () => {
     try {
-      const response = await axios.get("https://ih-beers-api2.herokuapp.com/beers");
+      const response = await axios.get(
+        "https://ih-beers-api2.herokuapp.com/beers"
+      );
       setBeers(response.data);
       setFetching(false);
     } catch (err) {
@@ -23,9 +25,7 @@ function BeersList() {
   };
 
   if (fetching) {
-    return (
-      <div>Loading!!!</div>
-    );
+    return <div>...Loading</div>;
   }
 
   return (

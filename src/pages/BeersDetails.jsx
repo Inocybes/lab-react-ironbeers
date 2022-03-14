@@ -32,7 +32,7 @@ function DetailsBeer() {
     <div>
       <Header />
       <h3>DetailsBeer</h3>
-      <img src={beersDetails.image_url} alt="image" width="100px" />
+      <img src={beersDetails.image_url} width={"100px"}/>
       <h4>{beersDetails.name}</h4>
       <p>Tagline:{beersDetails.tagline}</p>
       <p>First Brewed:{beersDetails.first_brewed}</p>
